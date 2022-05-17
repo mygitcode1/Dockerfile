@@ -16,4 +16,6 @@ RUN unzip terraform_1.1.9_linux_386.zip && chmod 777 terraform && ./terraform ve
 CMD ["nginx", "-g", "daemon off;"]
 
 Building Docker image
-# docker build -t bhanu143chandar/<imag_name>:version
+# docker build -t bhanu143chandar/<imag_name>:version .
+              or
+# docker build -t bhanu143chandar/<imag_name>:version <Dockerfile path>
