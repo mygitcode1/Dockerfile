@@ -19,3 +19,15 @@ Building Docker image
 # docker build -t bhanu143chandar/<imag_name>:version .
               or
 # docker build -t bhanu143chandar/<imag_name>:version <Dockerfile path>
+
+ARG --> Works at only Image build process
+ENV --> Used while launching a container, 
+Note that, ARG defined values diappear after image creation and ENV defined values can be visible in Container at echo $ENV or ust env
+EXPOSE --> Not to open the ports, Just to find on which port application works while an new user checks #docker image inspect <IMG_ID>
+CMD     --> Commands in CMD will run after container creation; Only 1 CMD is valid in a Image. If multiple CMD's is given, only last one gets execute.
+CMD ["executable","param1","param2"] 
+We can overide the CMD 
+docker build -t bhanu143chandar/devops:v5 . ping -c 5 google.com
+ENTRYPOINT  --> This doesn't allow override like CMD
+WORKDIR     --> All the data or files be kept in this dir, If defined.
+USER        --> Used to execute all the steps defined in Image as this particular user.
